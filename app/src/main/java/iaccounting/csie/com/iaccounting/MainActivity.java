@@ -75,6 +75,7 @@ public class MainActivity extends Drawer{
             items.add(item);
             cursor.moveToNext();
         }
+        
         SimpleAdapter SA = new SimpleAdapter(this,items,android.R.layout.simple_expandable_list_item_2,new String[]{"_id","_title"},new int[]{android.R.id.text1,android.R.id.text2});
         LV1.setAdapter(SA);
     }
