@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends Drawer{
-    public ReceiptDB rdb = null;
+    private ReceiptController rdbcon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,33 +50,42 @@ public class MainActivity extends Drawer{
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        rdb = new ReceiptDB(this);
-        add("1");
-        add("2");
-        add("3");
+        rdbcon = new ReceiptController(this);
+        rdbcon.insert("DB62608552",1070506);
+        ListView LV1 = (ListView)findViewById(R.id.LV); //讀取元件
+        rdbcon.display(LV1);
 
     }
 
-    private void add(String s) {
+
+
+    /*private void add(String s,int month) {
         SQLiteDatabase db = rdb.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("_title",s.toString());//寫入資料
+        values.put("_num",s.toString());//寫入資料
+        values.put("_date",month);
         db.insert("TB1",null,values);
+
+    }*/
+
+    /*private void display() {
+        SQLiteDatabase db = rdb.getWritableDatabase();
         ListView LV1 = (ListView)findViewById(R.id.LV); //讀取元件
-        Cursor cursor = db.query("TB1",new String[]{"_id","_title"},null,null,null,null,null);
+        Cursor cursor = db.query("TB1",new String[]{"_id","_num","_date"},null,null,null,null,null);
         List<Map<String,Object>> items = new ArrayList<Map<String,Object>>();
         cursor.moveToFirst();
 
         for(int i = 0;i < cursor.getCount();i++) {
             Map<String,Object> item = new HashMap<String,Object>();
             item.put("_id",cursor.getString(0));
-            item.put("_title",cursor.getString(1));
+            item.put("_num",cursor.getString(1));
+            item.put("_date",cursor.getString(2));
             items.add(item);
             cursor.moveToNext();
         }
-        
-        SimpleAdapter SA = new SimpleAdapter(this,items,android.R.layout.simple_expandable_list_item_2,new String[]{"_id","_title"},new int[]{android.R.id.text1,android.R.id.text2});
+
+        SimpleAdapter SA = new SimpleAdapter(this,items,android.R.layout.simple_expandable_list_item_2,new String[]{"_num","_date"},new int[]{android.R.id.text1,android.R.id.text2});
         LV1.setAdapter(SA);
-    }
+    }*/
+
 }

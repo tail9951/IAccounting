@@ -5,9 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class ReceiptDB extends SQLiteOpenHelper{
-    private final static String DB="Receipt.db";  //資料庫
-    private final static String TB="TB1";       //資料表
+    public final static String DB="Receipt.db";  //資料庫
+    public final static String TB="TB1";       //資料表
     private final static int VS=2;              //版本
+    public static final String _ID = "_id";
 
     public ReceiptDB(Context context) {
         //super(context, name, factory, version);
@@ -16,7 +17,7 @@ public class ReceiptDB extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String SQL = "CREATE TABLE IF NOT EXISTS " + TB + "(_id INTEGER PRIMARY KEY AUTOINCREMENT ,_title VARCHAR(50))";
+        String SQL = "CREATE TABLE IF NOT EXISTS " + TB + "(_id INTEGER PRIMARY KEY AUTOINCREMENT ,_num VARCHAR(15) ,_date INTEGER)";
         sqLiteDatabase.execSQL(SQL);
     }
 
