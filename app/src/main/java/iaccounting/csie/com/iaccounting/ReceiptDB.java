@@ -10,6 +10,7 @@ public class ReceiptDB extends SQLiteOpenHelper{
     private final static int VS=2;              //版本
     public static final String _ID = "_id";
 
+
     public ReceiptDB(Context context) {
         //super(context, name, factory, version);
         super(context, DB, null, VS);
