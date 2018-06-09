@@ -51,13 +51,18 @@ public class MainActivity extends Drawer{
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         rdbcon = new ReceiptController(this);
-        rdbcon.insert("DB62608552",1070506);
-        rdbcon.insert("DB65621203",1070416);
-        rdbcon.insert("DB15234564",1070326);
+        rdbcon.insert("DB62608552","2016-05-06");
+        rdbcon.insert("DB65621203","2016-04-16");
+        rdbcon.insert("DB15234564","2016-03-26");
+        rdbcon.insert("DB19995744","2017-05-12");
+        rdbcon.insert("DB52342156","2016-04-13");
+        rdbcon.insert("DB95620415","2016-06-06");
+        rdbcon.insert("DB65168552","2017-05-30");
         ListView LV1 = (ListView)findViewById(R.id.LV); //讀取元件
-        rdbcon.edit(3,"KF65621203", 1080401);
+        rdbcon.edit(3,"KF65621203", "2017-05-01");
         rdbcon.delete(2);
-        rdbcon.display(LV1);
+        //rdbcon.display(LV1);
+        rdbcon.single_display(LV1, rdbcon.query("2017-05"));
 
     }
 

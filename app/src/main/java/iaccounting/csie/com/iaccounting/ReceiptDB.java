@@ -20,7 +20,7 @@ public class ReceiptDB extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String SQL = "CREATE TABLE IF NOT EXISTS " + TB + "(_id INTEGER PRIMARY KEY AUTOINCREMENT ,_num VARCHAR(15) ,_date INTEGER)";
+        String SQL = "CREATE TABLE IF NOT EXISTS " + TB + "(_id INTEGER PRIMARY KEY AUTOINCREMENT ,_num VARCHAR(15) ,_date DATETIME)";
         sqLiteDatabase.execSQL(SQL);
     }
 
