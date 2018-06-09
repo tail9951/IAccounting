@@ -9,6 +9,8 @@ public class ReceiptDB extends SQLiteOpenHelper{
     public final static String TB="TB1";       //資料表
     private final static int VS=2;              //版本
     public static final String _ID = "_id";
+    public static final String _NUM = "_num";
+    public static final String _DATE = "_date";
 
 
     public ReceiptDB(Context context) {

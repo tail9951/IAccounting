@@ -52,7 +52,11 @@ public class MainActivity extends Drawer{
         navigationView.setNavigationItemSelectedListener(this);
         rdbcon = new ReceiptController(this);
         rdbcon.insert("DB62608552",1070506);
+        rdbcon.insert("DB65621203",1070416);
+        rdbcon.insert("DB15234564",1070326);
         ListView LV1 = (ListView)findViewById(R.id.LV); //讀取元件
+        rdbcon.edit(3,"KF65621203", 1080401);
+        rdbcon.delete(2);
         rdbcon.display(LV1);
 
     }
