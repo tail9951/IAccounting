@@ -7,9 +7,13 @@ import android.support.v7.app.AlertDialog;
 public class Achievement extends Application {
     private int receiptNum=0;
     private int accountNum=0;
+    private int diaryNum=0;
 
     public void addReceiptNum(){
         receiptNum+=1;
+    }
+    public void addDiaryNum(){
+        diaryNum+=1;
     }
     /*public void delReceiptNum(){
         receiptNum-=1;
@@ -35,6 +39,15 @@ public class Achievement extends Application {
             builder.show();
         }
     }
+    public int getReceiptNum() {
+        return receiptNum;
+    }
+    public int getDiaryNum() {
+        return diaryNum;
+    }
+    public int getAccountNum() {
+        return accountNum;
+    }
 
     public void addAccountNum(){
         accountNum+=1;
@@ -45,19 +58,19 @@ public class Achievement extends Application {
     }*/
 
     public void checkAccountNum(Context c){
-        if(receiptNum == 10) {
+        if(accountNum == 10) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("記帳達人");
             builder.setMessage("已經累計" + accountNum + "張帳單了");
             builder.show();
         }
-        if(receiptNum == 100) {
+        if(accountNum == 100) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("記帳王");
             builder.setMessage("已經累計" + accountNum + "張帳單了");
             builder.show();
         }
-        if(receiptNum == 1000) {
+        if(accountNum == 1000) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("記帳神");
             builder.setMessage("已經累計" + accountNum + "張帳單了");

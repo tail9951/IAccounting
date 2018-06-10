@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.+'
+        classpath 'org.codehaus.groovy:groovy-backports-compat23:2.3.5'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.novoda:bintray-release:0.8.0'
+
+    }
+}
+apply plugin: 'com.novoda.bintray-release'
+
+
+publish {
+    userOrg = 'devmagician'
+    groupId = 'com.github.skydoves'
+    artifactId = 'medal'
+    publishVersion = '1.0.1'
+    desc = 'This is Medal by skydoves'
+    website = 'https://github.com/skydoves/Medal'
+    issueTracker = "${website}/issues"
+    repository = "${website}.git"
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+}
+dependencies {
+    compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
+}
+
