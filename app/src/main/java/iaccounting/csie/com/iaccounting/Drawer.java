@@ -96,7 +96,7 @@ public class Drawer extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             intent.setClass(now , TestActivity.class);
         } else if (id == R.id.nav_slideshow) {
-            intent.setClass(now , RankingActivity.class);
+            intent.setClass(now , piechartActivity.class);
         } else if (id == R.id.nav_manage) {
             intent.setClass(now , RankingActivity.class);
         } else if (id == R.id.nav_share) {

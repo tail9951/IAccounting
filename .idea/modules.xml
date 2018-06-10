@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/IAccounting9.iml" filepath="$PROJECT_DIR$/.idea/IAccounting9.iml" />
       <module fileurl="file://$PROJECT_DIR$/IAccountingF.iml" filepath="$PROJECT_DIR$/IAccountingF.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medal/medal.iml" filepath="$PROJECT_DIR$/medal/medal.iml" />
       <module fileurl="file://$PROJECT_DIR$/medal/Medal.iml" filepath="$PROJECT_DIR$/medal/Medal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

@@ -55,41 +55,41 @@ public class RankingActivity extends AppCompatActivity {
         ArrayList<Listviewitem> items = new ArrayList<>();
         ListviewAdapter adapter = new ListviewAdapter(this, R.layout.item_rank, items);
 
-        if(receipt_num==10)
+        if(receipt_num>=5)
         {
             Listviewitem item0 = new Listviewitem(
-                    ContextCompat.getDrawable(this, R.drawable.medal10), ContextCompat.getDrawable(this, R.drawable.face1), "發票達人", "發票已經累計" + receipt_num + "張了");
+                    ContextCompat.getDrawable(this, R.drawable.medal10), ContextCompat.getDrawable(this, R.drawable.face1), "發票達人", "發票達成5張");
             items.add(item0);
         }
-        if(receipt_num==20)
+        if(receipt_num>=10)
         {
             Listviewitem item1 = new Listviewitem(
-                    ContextCompat.getDrawable(this, R.drawable.medal9), ContextCompat.getDrawable(this, R.drawable.face2), "發票王", "發票已經累計" + receipt_num + "張了");
+                    ContextCompat.getDrawable(this, R.drawable.medal9), ContextCompat.getDrawable(this, R.drawable.face2), "發票王", "發票達成10張");
             items.add(item1);
         }
-        if(receipt_num==50)
+        if(receipt_num>=15)
         {
             Listviewitem item2 = new Listviewitem(
-                    ContextCompat.getDrawable(this, R.drawable.medal2), ContextCompat.getDrawable(this, R.drawable.face3), "發票神", "發票已經累計" + receipt_num + "張了");
+                    ContextCompat.getDrawable(this, R.drawable.medal2), ContextCompat.getDrawable(this, R.drawable.face3), "發票神", "發票達成15張");
             items.add(item2);
         }
 
-        if(account_num==10)
+        if(account_num>=5)
         {
             Listviewitem item3 = new Listviewitem(
-                    ContextCompat.getDrawable(this, R.drawable.medal10), ContextCompat.getDrawable(this, R.drawable.face1), "記帳達人", "發票已經累計" + receipt_num + "張了");
+                    ContextCompat.getDrawable(this, R.drawable.medal10), ContextCompat.getDrawable(this, R.drawable.face1), "記帳達人", "記帳累計5筆");
             items.add(item3);
         }
-        if(account_num==20)
+        if(account_num>=10)
         {
             Listviewitem item4 = new Listviewitem(
-                    ContextCompat.getDrawable(this, R.drawable.medal9), ContextCompat.getDrawable(this, R.drawable.face2), "記帳王", "發票已經累計" + receipt_num + "張了");
+                    ContextCompat.getDrawable(this, R.drawable.medal9), ContextCompat.getDrawable(this, R.drawable.face2), "記帳王", "記帳累計10筆");
             items.add(item4);
         }
-        if(account_num==50)
+        if(account_num>=15)
         {
             Listviewitem item5 = new Listviewitem(
-                    ContextCompat.getDrawable(this, R.drawable.medal4), ContextCompat.getDrawable(this, R.drawable.face3), "記帳神", "發票已經累計" + receipt_num + "張了");
+                    ContextCompat.getDrawable(this, R.drawable.medal4), ContextCompat.getDrawable(this, R.drawable.face3), "記帳神", "記帳累計15筆");
             items.add(item5);
         }
         if(diary_num>=1)
@@ -98,13 +98,13 @@ public class RankingActivity extends AppCompatActivity {
                     ContextCompat.getDrawable(this, R.drawable.medal5), ContextCompat.getDrawable(this, R.drawable.face3), "日記初心者", "完成一篇日記!");
             items.add(item6);
         }
-        if(receipt_num<10)
+        if(receipt_num<5)
         {
             Listviewitem item = new Listviewitem(
                     ContextCompat.getDrawable(this, R.drawable.medal7), ContextCompat.getDrawable(this, R.drawable.profile), "隱藏成就" , "發票成就尚未達成");
             items.add(item);
         }
-        if(account_num<10)
+        if(account_num<5)
         {
             Listviewitem item = new Listviewitem(
                     ContextCompat.getDrawable(this, R.drawable.medal7), ContextCompat.getDrawable(this, R.drawable.profile), "隱藏成就" , "記帳成就尚未達成");

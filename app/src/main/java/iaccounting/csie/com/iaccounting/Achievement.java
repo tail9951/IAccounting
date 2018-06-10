@@ -20,19 +20,19 @@ public class Achievement extends Application {
     }*/
 
     public void checkReceiptNum(Context c){
-        if(receiptNum == 10) {
+        if(receiptNum == 5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("發票達人");
             builder.setMessage("發票已經累計" + receiptNum + "張了");
             builder.show();
         }
-        if(receiptNum == 100) {
+        if(receiptNum == 10) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("發票王");
             builder.setMessage("發票已經累計" + receiptNum + "張了");
             builder.show();
         }
-        if(receiptNum == 1000) {
+        if(receiptNum == 15) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("發票神");
             builder.setMessage("發票已經累計" + receiptNum + "張了");
@@ -58,19 +58,19 @@ public class Achievement extends Application {
     }*/
 
     public void checkAccountNum(Context c){
-        if(accountNum == 10) {
+        if(accountNum == 5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("記帳達人");
             builder.setMessage("已經累計" + accountNum + "張帳單了");
             builder.show();
         }
-        if(accountNum == 100) {
+        if(accountNum == 10) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("記帳王");
             builder.setMessage("已經累計" + accountNum + "張帳單了");
             builder.show();
         }
-        if(accountNum == 1000) {
+        if(accountNum == 15) {
             AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("記帳神");
             builder.setMessage("已經累計" + accountNum + "張帳單了");

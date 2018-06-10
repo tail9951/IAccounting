@@ -40,6 +40,12 @@ public class piechartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AccountController ac= new AccountController(this);
+        /*ac.insert("omel","2018-03-06",100,"dddddd",6,2,1);
+        ac.insert("omel","2018-03-07",100,"dddddd",1,2,1);
+        ac.insert("omel","2018-03-08",100,"dddddd",3,2,1);
+        ac.insert("omel","2018-03-09",100,"dddddd",4,2,1);
+        ac.insert("omel","2018-03-10",100,"dddddd",8,2,1);
+        ac.insert("omel","2018-03-11",100,"dddddd",6,2,1);*/
         for(Integer i = 0 ; i < 8;i++) {
             Cursor c=ac.query_m_sum("2018-03",i+1);
             if(c.moveToFirst())
