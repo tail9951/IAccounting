@@ -32,10 +32,15 @@ public class ReceiptController {
     }
 
     public void insert(String s, String month) {
+
         ContentValues values = new ContentValues();
         values.put(rdb._NUM,s.toString());      //寫入資料
         values.put(rdb._DATE,month.toString());
         db.insert(rdb.TB,null,values);
+
+        //成就系統
+        Achievement gv = (Achievement) ourcontext.getApplicationContext();
+        gv.addReceiptNum();
     }
 
     public void edit(long _id, String _num, String _date){

@@ -60,6 +60,10 @@ public class AccountController {
         values.put(ACC_ID, acc_id);
         values.put(IN_OR_OUT, in_or_out);
         db.insert(TABLE_NAME, null, values);
+
+        //成就系統
+        Achievement gv = (Achievement) mycontext.getApplicationContext();
+        gv.addAccountNum();
     }
     public void delete_acc(long _id) {
         db.delete(TABLE_NAME2, ACC_ID + "=" + _id, null);
