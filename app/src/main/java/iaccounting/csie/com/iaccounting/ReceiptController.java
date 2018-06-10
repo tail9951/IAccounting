@@ -59,6 +59,11 @@ public class ReceiptController {
         Cursor c = db.rawQuery("select * from TB1 where strftime('%Y-%m',_date)=?", new String[] {date});
         return c;
     }
+    //使用id搜尋發票
+    public Cursor query(long id){
+        Cursor c = db.rawQuery("select * from TB1 where _id=?",new String[]{String.valueOf(id)});
+        return c;
+    }
 
     public void single_display(ListView lv,Cursor c){
         Cursor cursor = c;
