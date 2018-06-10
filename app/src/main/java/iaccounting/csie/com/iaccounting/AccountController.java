@@ -88,7 +88,7 @@ public class AccountController {
             cursor.moveToNext();
         }
         SimpleAdapter SA = new SimpleAdapter(mycontext,items,
-                android.R.layout.simple_expandable_list_item_2,new String[]{"NAME","TIME"},
+                android.R.layout.simple_expandable_list_item_2,new String[]{"CATEGORY","TIME"},
                 new int[]{android.R.id.text1,android.R.id.text2});
         lv.setAdapter(SA);
     }
@@ -112,7 +112,7 @@ public class AccountController {
             cursor.moveToNext();
         }
         SimpleAdapter SA = new SimpleAdapter(mycontext,items,
-                android.R.layout.simple_expandable_list_item_2,new String[]{"ID","TIME"},
+                android.R.layout.simple_expandable_list_item_2,new String[]{"CATEGORY","TIME"},
                 new int[]{android.R.id.text1,android.R.id.text2});
         lv.setAdapter(SA);
     }
@@ -189,6 +189,37 @@ public class AccountController {
                 new int[]{android.R.id.text1,android.R.id.text2});
         lv.setAdapter(SA);
     }
+
+    //查詢明細(年)+分類
+    public Cursor query_y(String year,Integer category){
+        if(category == null) {
+            Cursor c = db.rawQuery("select * from " + TABLE_NAME + " where strftime('%Y',time) = ?", new String[]{year});
+            return c;
+        }
+        else {
+            Cursor c = db.rawQuery("select * from " + TABLE_NAME + " where strftime('%Y',time) = ? AND category =" + category, new String[]{year});
+            return c;
+        }
+    }
+    //查詢明細(月)+分類
+    public Cursor query_m(String month,Integer category){
+        if(category == null) {
+            Cursor c = db.rawQuery("select * from " + TABLE_NAME + " where strftime('%Y-%m',time) = ?", new String[]{month});
+            return c;
+        }
+        else {
+            Cursor c = db.rawQuery("select * from " + TABLE_NAME + " where strftime('%Y-%m',time) = ? AND category =" + category, new String[]{month});
+            return c;
+        }
+    }
+    //查詢明細(日)+分類
+    public Cursor query_d(String date,Integer category) {
+        if (category == null) {
+            Cursor c = db.rawQuery("select * from " + TABLE_NAME + " where strftime('%Y-%m-%d',time) = ?", new String[]{date});
+            return c;
+        } else {
+            Cursor c = db.rawQuery("select * from " + TABLE_NAME + " where strftime('%Y-%m-%d',time) = ? AND category =" + category, new String[]{date});
+            return c;
+        }
+    }
 }
-
-
