@@ -16,6 +16,7 @@ public class ReceiptDB extends SQLiteOpenHelper{
     public ReceiptDB(Context context) {
         //super(context, name, factory, version);
         super(context, DB, null, VS);
+
     }
 
     @Override

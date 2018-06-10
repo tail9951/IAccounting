@@ -24,6 +24,7 @@ public class ReceiptController {
         ourcontext = c;
         rdb = new ReceiptDB(c);
         db = rdb.getWritableDatabase();
+
     }
 
 
