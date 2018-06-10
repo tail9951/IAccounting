@@ -226,4 +226,9 @@ public class AccountController {
             return c;
         }
     }
+    
+       public Cursor query_m_sum(String month,Integer category){
+        Cursor c = db.rawQuery("select SUM(amount) from " + TABLE_NAME + " where strftime('%Y-%m',time) = ? AND category =" + category, new String[]{month});
+        return c;
+    }
 }
