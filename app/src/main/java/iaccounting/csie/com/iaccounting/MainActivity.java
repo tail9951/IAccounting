@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -57,12 +58,17 @@ public class MainActivity extends Drawer{
         rdbcon.insert("DB19995744","2017-05-12");
         rdbcon.insert("DB52342156","2016-04-13");
         rdbcon.insert("DB95620415","2016-06-06");
-        rdbcon.insert("DB65168552","2017-05-30");
+        rdbcon.insert("DB65156842","2017-05-30");
+        rdbcon.insert("CB65212032","2016-04-16");
+        rdbcon.insert("AB68432135","2016-04-16");
+        rdbcon.insert("RB98512303","2016-04-16");
         ListView LV1 = (ListView)findViewById(R.id.LV); //讀取元件
         rdbcon.edit(3,"KF65621203", "2017-05-01");
-        rdbcon.delete(2);
-        //rdbcon.display(LV1);
-        rdbcon.single_display(LV1, rdbcon.query("2017-05"));
+        //rdbcon.delete(2);
+        rdbcon.display(LV1);
+        //rdbcon.single_display(LV1, rdbcon.query("2017-05"));
+        Achievement gv = (Achievement) getApplicationContext();
+        gv.checkReceiptNum(this);
 
     }
 

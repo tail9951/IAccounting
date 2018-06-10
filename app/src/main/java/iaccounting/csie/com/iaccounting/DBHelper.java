@@ -29,7 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
             final String INIT_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" +ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " CHAR, " + TIME + " DATETIME, " + AMOUNT + " INT, " + DESCRIPTION + " CHAR, " + CATEGORY + " INT, " + ACC_ID + " INT, " + IN_OR_OUT + " INT);";
-            final String INIT_TABLE2 = "CREATE TABLE " + TABLE_NAME2 + " (" +ACC_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + ACC_NAME + " CHAR, " + CURRENCY + " CHAR, " + ACC_AMOUNT + " CHAR);";
+            final String INIT_TABLE2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 + " (" +ACC_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + ACC_NAME + " CHAR, " + CURRENCY + " INT, " + ACC_AMOUNT + " INT);";
             db.execSQL(INIT_TABLE);
             db.execSQL(INIT_TABLE2);
     }

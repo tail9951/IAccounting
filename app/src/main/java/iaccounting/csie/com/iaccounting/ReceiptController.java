@@ -33,10 +33,15 @@ public class ReceiptController {
     }
 
     public void insert(String s, String month) {
+
         ContentValues values = new ContentValues();
         values.put(rdb._NUM,s.toString());      //寫入資料
         values.put(rdb._DATE,month.toString());
         db.insert(rdb.TB,null,values);
+
+        //成就系統
+        Achievement gv = (Achievement) ourcontext.getApplicationContext();
+        gv.addReceiptNum();
     }
 
     public void edit(long _id, String _num, String _date){
@@ -53,6 +58,11 @@ public class ReceiptController {
     //輸入年月 ex:2017-05 回傳一個 2017-05的所有發票Cursor
     public Cursor query(String date){
         Cursor c = db.rawQuery("select * from TB1 where strftime('%Y-%m',_date)=?", new String[] {date});
+        return c;
+    }
+    //使用id搜尋發票
+    public Cursor query(long id){
+        Cursor c = db.rawQuery("select * from TB1 where _id=?",new String[]{String.valueOf(id)});
         return c;
     }
 

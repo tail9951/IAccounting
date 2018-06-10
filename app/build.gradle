@@ -2,7 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
+<<<<<<< HEAD
     buildToolsVersion '27.0.3'
+=======
+    buildToolsVersion '28'
+>>>>>>> 6f0f18d8a0e6d6629aaa7ec0e3092236bf9ed3e2
     defaultConfig {
         applicationId "iaccounting.csie.com.iaccounting"
         minSdkVersion 21
@@ -21,9 +25,11 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support.constraint:constraint-layout:1.1.1'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:cardview-v7:24.2.1'
     testCompile 'junit:junit:4.12'
 }
